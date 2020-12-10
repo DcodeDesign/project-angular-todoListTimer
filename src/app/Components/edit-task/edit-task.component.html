@@ -1,0 +1,32 @@
+<div class="modal-overlay" (click)="$event.stopPropagation()">
+  <div class="dialog-edit__content">
+    <div class="header-dialog">
+      <p>{{ editCurrentTask.name }}</p>
+    </div>
+
+    <form [formGroup]="reactForm" (ngSubmit)="onSubmit($event)">
+      <input type="hidden" value="{{ editCurrentTask.id }}" name="id" class="validate" formControlName="id">
+      <div class="dialog-content">
+        <div class="group-form">
+          <label>Changer le nom de la tâche : </label> <br>
+          <label>
+            <input type="text" value="{{ editCurrentTask.name }}" name="name" class="validate" formControlName="name"/>
+          </label>
+        </div>
+        <div class="group-form">
+          <label>
+            <input name="isTerminated"
+                   class="validate"
+                   formControlName="isTerminated"
+                   type="checkbox"
+                   [checked]='editCurrentTask.isTerminated'/>
+          </label>
+          <label class="label-checkbox"> : Tâche terminée </label>
+        </div>
+      </div>
+      <div class="footer-dialog">
+        <button type="submit" (click)="$event.stopPropagation()">Mettre à jours</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,197 @@
+button {
+  outline:0;
+}
+.component-tasks {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  background-color: white;
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+
+  .input-group {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+
+    .input-field {
+      width: 80%;
+      float: right;
+      overflow: hidden;
+
+      .input-task {
+        width: 100%;
+        padding: 10px;
+        color: #262626;
+        font-size: 16px;
+        border: 3px solid white;
+        background-color: #eeeeee;
+        box-sizing: border-box;
+        -webkit-box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.28);
+        -moz-box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.28);
+        box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.28);
+      }
+
+      .input-task:focus {
+        outline: 0;
+      }
+
+      .input-task::-webkit-input-placeholder { /* Edge */
+        color: #a2a2a2;
+      }
+
+      .input-task:-ms-input-placeholder { /* Internet Explorer */
+        color: #a2a2a2;
+      }
+
+      .input-task::placeholder {
+        color: #a2a2a2;
+      }
+    }
+
+    .input-group__menu {
+      box-sizing: border-box;
+      display: block;
+      float: left;
+      width: 20%;
+      padding: 3px 0 5px 3px;
+
+      input[type="radio"] + label {
+        float: left;
+        text-align: center;
+        box-sizing: content-box;
+        padding: 13px 0;
+        width: 50%;
+        font-size: 10px;
+        display: inline-block;
+        background-color: #eeeeee;
+        color: #a2a2a2;
+        transition: background-color 0.5s ease-in-out;
+        -webkit-box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.28);
+        -moz-box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.28);
+        box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, 0.28);
+      }
+
+      input[type="radio"] {
+        &:checked {
+          + label {
+            background-color: #a2a2a2;
+            color: #eeeeee;
+            -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+
+      input[type="radio"] {
+        display: none;
+      }
+    }
+  }
+
+  .multiActions__menu {
+    position: fixed;
+    z-index: 999;
+    background-color: white;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+
+    button {
+      background-color: #a2a2a2;
+      color: #eeeeee;
+      -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+      -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+      border: none;
+      margin: 3px;
+      padding: 13px;
+    }
+  }
+
+  .task-list {
+    margin: 0;
+    padding: 0;
+
+    .task-item {
+      position: relative;
+      font-size: 16px;
+      color: #6e6e6e;
+      list-style-type: none;
+      padding: 15px 10px;
+      border-bottom: 1px solid #eeeeee;
+      transition: background-color 0.5s ease-in-out, border-bottom 0.5s ease-in-out;
+
+      span[class*="message-deleted-" ] {
+        display: none;
+
+        &.show {
+          display: inline-block;
+        }
+      }
+
+      .isTerminated {
+        text-decoration: line-through;
+        color: #969696;
+      }
+
+      .task-item__menu {
+        opacity: 1;
+        z-index: -999;
+        position: absolute;
+        top: 50%;
+        right: 4px;
+        transform: translateY(-50%);
+        transition: all 0.5s ease-in-out;
+        background-color: #a4a4a4;
+        overflow: hidden;
+
+        button {
+          background-color: #a2a2a2;
+          color: #eeeeee;
+          -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+          -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+          border: none;
+          padding: 8px;
+          margin: 1px 2px 0 0;
+        }
+
+        &.show {
+          opacity: 1;
+          right: 60px;
+          z-index: 999;
+          background-color: white;
+        }
+
+      }
+
+      .task-item__menu__btn {
+        position: relative;
+        z-index: 998;
+        float: right;
+        background-color: #a2a2a2 ;
+        color:#eeeeee;
+        -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+        border:none;
+        padding:8px;
+        margin-top:-5px;
+      }
+    }
+
+    .task-item-focus {
+      background-color: #eeeeee;
+      border-bottom: 1px solid white;
+    }
+  }
+}
+
+

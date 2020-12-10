@@ -1,0 +1,29 @@
+<div class="dialog-timer" [id]="timerCurrentTask.id">
+  <div class="modal-overlay">
+    <div class="dialog-timer__content">
+      <div class="header-dialog">
+        <button class="close">
+          <span> X </span>
+        </button>
+        <p>{{ timerCurrentTask.name }}</p>
+      </div>
+
+      <div class="display-chrono">
+        <p>
+          <span class="heure">00</span> : <span class="minute">00</span> : <span class="seconde">00</span>
+        </p>
+      </div>
+      <div class="display-actions">
+        <button class="start">
+          <img src="assets/play.svg" width="15" alt="play"/>
+        </button>
+        <button class="stop" disabled>
+          <img src="assets/pause.svg" width="15" alt="stop"/>
+        </button>
+        <button class="reset">
+          <img src="assets/reset.svg" width="15" alt="reset"/>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
